@@ -41,6 +41,9 @@ RUN service postgresql start && \
   psql -U postgres -d postgres -c "alter system set listen_addresses to '*';" && \
   psql -U postgres -d postgres -c "alter system set shared_preload_libraries to 'timescaledb';"
 RUN sed -i "s|# host    .*|host all all all scram-sha-256|g" /etc/postgresql/14/main/pg_hba.conf
+RUN service postgres stop
+RUN sudo pkill -u postgres
+RUN sudo rm -rf /var/run/postgresql/*
 RUN service postgresql restart && psql -X -c "create extension timescaledb;"
 
 # installation of mongo_fdw

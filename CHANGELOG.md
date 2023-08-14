@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/compare/v1.0.2...v1.1.0) (2023-08-14)
+
+
+### Features
+
+* Docker image fixes ([910bef7](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/commit/910bef7c45d4b36392fdb9768c71b8bf1ac576f3))
+
 ## [1.0.2](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/compare/v1.0.1...v1.0.2) (2023-08-14)
 
 

@@ -1,32 +1,30 @@
-ARG ARCH=
-
-FROM ${ARCH}ubuntu
+FROM ubuntu
 LABEL org.opencontainers.image.source="https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw"\
-    org.opencontainers.image.authors="Oblak Studio <support@oblak.studio>" \
-    org.opencontainers.image.title="TimescaleDB with Mongo and MySQL FDW" \
-    org.opencontainers.image.description="TimescaleDB with Mongo and MySQL FDW" \
-    org.opencontainers.image.licenses="MIT"
+  org.opencontainers.image.authors="Oblak Studio <support@oblak.studio>" \
+  org.opencontainers.image.title="TimescaleDB with Mongo and MySQL FDW" \
+  org.opencontainers.image.description="TimescaleDB with Mongo and MySQL FDW" \
+  org.opencontainers.image.licenses="MIT"
 
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y \
-    gnupg \
-    postgresql-common
+  gnupg \
+  postgresql-common
 RUN yes | /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
 RUN apt-get update && apt-get install -y \
-    postgresql-14 \
-    postgresql-server-dev-14  \
-    gcc \
-    cmake \
-    libssl-dev \
-    libkrb5-dev \
-    git \
-    nano \
-    wget \
-    sudo \
-    netcat \
-    pkg-config \
-    libmysqlclient-dev
+  postgresql-14 \
+  postgresql-server-dev-14  \
+  gcc \
+  cmake \
+  libssl-dev \
+  libkrb5-dev \
+  git \
+  nano \
+  wget \
+  sudo \
+  netcat \
+  pkg-config \
+  libmysqlclient-dev
 WORKDIR /tmp
 RUN git clone https://github.com/timescale/timescaledb/
 WORKDIR /tmp/timescaledb
@@ -39,9 +37,9 @@ RUN pg_dropcluster 14 main --stop
 RUN pg_createcluster 14 main -- --auth-host=scram-sha-256 --auth-local=peer --encoding=utf8
 USER postgres
 RUN service postgresql start && \
-    psql -U postgres -d postgres -c "alter user postgres with password 'postgres';" && \
-    psql -U postgres -d postgres -c "alter system set listen_addresses to '*';" && \
-    psql -U postgres -d postgres -c "alter system set shared_preload_libraries to 'timescaledb';"
+  psql -U postgres -d postgres -c "alter user postgres with password 'postgres';" && \
+  psql -U postgres -d postgres -c "alter system set listen_addresses to '*';" && \
+  psql -U postgres -d postgres -c "alter system set shared_preload_libraries to 'timescaledb';"
 RUN sed -i "s|# host    .*|host all all all scram-sha-256|g" /etc/postgresql/14/main/pg_hba.conf
 RUN service postgresql restart && psql -X -c "create extension timescaledb;"
 

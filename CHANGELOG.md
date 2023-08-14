@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/compare/v1.0.0...v1.0.1) (2023-08-14)
+
+
+### Bug Fixes
+
+* Fixed postgres stop ([e385954](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/commit/e385954f8a4e16ff67b3d313959ed21a0659e532))
+
 # 1.0.0 (2023-08-14)
 
 

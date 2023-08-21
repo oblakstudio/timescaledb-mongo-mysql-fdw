@@ -63,10 +63,10 @@ jobs:
             type=sha,
             type=raw,value=latest,enable={{is_default_branch}}
           labels: |
-            org.opencontainers.image.source="https://github.com/oblakstudio/wcs"
+            org.opencontainers.image.source="https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw"
             org.opencontainers.image.authors="Oblak Studio <support@oblak.studio>"
-            org.opencontainers.image.title="WooCommerce Sync Service v2"
-            org.opencontainers.image.description="Docker Optimized WooSync v2"
+            org.opencontainers.image.title="TimescaleDB Mongo MySQL FDW"
+            org.opencontainers.image.description="TimescaleDB on PG14 with Mongo MySQL FDW"
             org.opencontainers.image.licenses="MIT"
 
       - name: Build Docker Image
@@ -80,5 +80,5 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          outputs: type=image,name=target,push=true,annotation-index-descriptor.org.opencontainers.image.title=WooCommerce Sync Service v2,annotation-index-descriptor.org.opencontainers.image.authors=Oblak Studio <support@oblak.studio>,annotation-index-descriptor.org.opencontainers.image.source=https://github.com/oblakstudio/wcs,annotation-index-descriptor.org.opencontainers.image.description=Docker Optimized WooSync v2,annotation-index-descriptor.org.opencontainers.image.licenses=MIT
+          outputs: type=image,name=target,push=true
           provenance: false

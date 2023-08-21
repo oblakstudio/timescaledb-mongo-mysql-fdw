@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/compare/v2.0.0...v2.0.1) (2023-08-21)
+
+
+### Bug Fixes
+
+* **Docker:** Fixed arches ([772e291](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/commit/772e291871b4b945b9e9fe3533d1b26203493fbb))
+
 # [2.0.0](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/compare/v1.1.0...v2.0.0) (2023-08-21)
 
 

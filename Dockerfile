@@ -49,8 +49,7 @@ RUN pg_ctlcluster 14 main start && psql -U postgres -d postgres -c "CREATE EXTEN
   RUN psql -U postgres -d postgres -c "CREATE EXTENSION mysql_fdw;"
 
 USER root
-RUN apt-get remove -y llvm-14 \
-  build-essential \
+RUN apt-get remove -y build-essential \
   curl \
   debian-keyring \
   debian-archive-keyring \

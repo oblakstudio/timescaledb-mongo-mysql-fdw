@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/compare/v2.1.0...v2.1.1) (2023-08-22)
+
+
+### Bug Fixes
+
+* Added PGA conf ([a360aa7](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/commit/a360aa7cdb5d07bc964cdace7beebdd289d93dd4))
+
 # [2.1.0](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/compare/v2.0.3...v2.1.0) (2023-08-22)
 
 

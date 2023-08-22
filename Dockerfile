@@ -33,8 +33,10 @@ RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
 
 RUN yes | /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
 
-RUN rm /etc/postgresql/14/main/postgresql.conf
-COPY ./postgresql.conf /etc/postgresql/14/main/
+# RUN rm /etc/postgresql/14/main/postgresql.conf
+# COPY ./postgresql.conf /etc/postgresql/14/main/
+
+
 
 USER postgres
 RUN pg_dropcluster 14 main --stop
@@ -44,13 +46,14 @@ RUN service postgresql start
 RUN pg_ctlcluster 14 main start && \
   psql -U postgres -d postgres -c "alter user postgres with password 'postgres';" && \
   psql -U postgres -d postgres -c "alter system set listen_addresses to '*';" && \
-  psql -U postgres -d postgres -c "alter system set shared_preload_libraries to 'timescaledb';"
+  psql -U postgres -d postgres -c "alter system set shared_preload_libraries to 'timescaledb';" &&\
+  psql -U postgres -d postgres -c "alter system set shared_preload_libraries='timescaledb','pg_cron';"
 
 RUN service postgresql restart
-RUN pg_ctlcluster 14 main start && psql -U postgres -d postgres -c "CREATE EXTENSION timescaledb;" \
-  RUN psql -U postgres -d postgres -c "CREATE EXTENSION mongo_fdw;"\
-  RUN psql -U postgres -d postgres -c "CREATE EXTENSION mysql_fdw;"\
-  RUN psql -U postgres -d postgres -c "CREATE EXTENSION pg_cron;"
+RUN pg_ctlcluster 14 main start && psql -U postgres -d postgres -c "CREATE EXTENSION timescaledb;" &&\
+  psql -U postgres -d postgres -c "CREATE EXTENSION mongo_fdw;" &&\
+  psql -U postgres -d postgres -c "CREATE EXTENSION mysql_fdw;"
+# RUN psql -U postgres -d postgres -c "CREATE EXTENSION pg_cron;"
 
 USER root
 RUN apt-get remove -y build-essential \

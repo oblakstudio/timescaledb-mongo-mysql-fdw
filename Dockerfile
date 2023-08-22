@@ -33,6 +33,9 @@ RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
 
 RUN yes | /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
 
+RUN rm /etc/postgresql/14/main/postgresql.conf
+COPY ./postgresql.conf /etc/postgresql/14/main/
+
 USER postgres
 RUN pg_dropcluster 14 main --stop
 RUN pg_createcluster 14 main -- --auth-host=scram-sha-256 --auth-local=peer --encoding=utf8

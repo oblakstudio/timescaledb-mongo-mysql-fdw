@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/compare/v2.0.2...v2.0.3) (2023-08-22)
+
+
+### Bug Fixes
+
+* Added PG config ([05eaca1](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/commit/05eaca1b2b40a38d5cf588a2cd6c6aac8347fa93))
+
 ## [2.0.2](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/compare/v2.0.1...v2.0.2) (2023-08-21)
 
 

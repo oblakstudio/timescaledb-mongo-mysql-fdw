@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/compare/v2.0.3...v2.1.0) (2023-08-22)
+
+
+### Features
+
+* Added pg_cron ([3deb4cb](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/commit/3deb4cb2f8aef6fcdd3b0a0735129ca6735b980d))
+
 ## [2.0.3](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/compare/v2.0.2...v2.0.3) (2023-08-22)
 
 

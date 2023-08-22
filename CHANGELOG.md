@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/compare/v2.0.1...v2.0.2) (2023-08-21)
+
+
+### Bug Fixes
+
+* Fixed mongo FDW ([148f78c](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/commit/148f78c8e29f062d86703eb4341192a947c2a445))
+
 ## [2.0.1](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/compare/v2.0.0...v2.0.1) (2023-08-21)
 
 

@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/compare/v2.1.1...v2.1.2) (2023-08-24)
+
+
+### Bug Fixes
+
+* Added pg_cron host ([acb25cd](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/commit/acb25cd63d27877297c1e9c00b8785058c8f9b97))
+
 ## [2.1.1](https://github.com/oblakstudio/timescaledb-mongo-mysql-fdw/compare/v2.1.0...v2.1.1) (2023-08-22)
 
 
